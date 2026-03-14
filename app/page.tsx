@@ -1,6 +1,7 @@
-
+import {testing} from "./be_initial"
 
 export default function Home() {
+  testing()
   return (
     <div className="page">
       <main>
