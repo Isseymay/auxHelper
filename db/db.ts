@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const url = "";
+const url = ""; // we currently have no db rn
 
 const client = new MongoClient(url);
 
