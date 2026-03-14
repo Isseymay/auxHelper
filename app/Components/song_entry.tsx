@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import { CheckIcon } from "../icons/check-circle";
+import XIcon from "../icons/x-circle";
 
 export default function SongEntry({song_name="All Star", song_artist="Smash Mouth"}){
     const [upvoteCount, setUpvoteCount] = useState(0);
@@ -23,21 +25,21 @@ export default function SongEntry({song_name="All Star", song_artist="Smash Mout
 
                     </div>
                 </div>
-                <div className="vote-buttons flex border-2 items-center">
+                <div className="vote-buttons flex items-center gap-3">
                     <span className="upvote-text">
                         {upvoteCount}
                     </span>
 
-                    <button className="upvote-button" onClick={() => setUpvoteCount(upvoteCount + 1)}>
-                        up
+                    <button className="upvote-button cursor-pointer" onClick={() => setUpvoteCount(upvoteCount + 1)}>
+                        <CheckIcon />
                     </button>
 
                     <span className="downvote-text">
                         {downvoteCount}
                     </span>
 
-                    <button className="downvote-button" onClick={() => setDownvoteCount(downvoteCount + 1)}>
-                        down
+                    <button className="downvote-button cursor-pointer" onClick={() => setDownvoteCount(downvoteCount + 1)}>
+                        <XIcon />
                     </button>
 
                 </div>
