@@ -1,7 +1,7 @@
 
-export default function Home() {
+export default function Start() {
   return (
-    <div className="page">
+    <div className="start">
       <main>
         <div className="Party-header">
           <h1>Party has been started</h1>
