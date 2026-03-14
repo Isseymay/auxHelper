@@ -10,7 +10,7 @@ export default function SongEntry({song_name="All Star", song_artist="Smash Mout
 
     return(
         <div className="song-container flex w-full h-20 m-6">
-            <div className="song-bg flex rounded-md w-full h-full justify-between bg-purple-900 p-5">
+            <div className="song-bg flex rounded-md w-full h-full justify-between bg-cyan-900 p-5">
                 <div className="song-stuff flex items-center gap-3">
                     <div className="img-placeholder h-15 aspect-square align-left bg-green-700 content-center text-center">
                         buh
