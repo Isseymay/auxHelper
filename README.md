@@ -8,7 +8,12 @@ Dependencies:
 
 ## Getting Started
 
-First, run the development server:
+How to get the dependencies required:
+- Clone the repo
+- Navigate to the root folder in bash
+- run ```bash npm install``` or whatever based off your package manager.
+
+How to run:
 
 ```bash
 npm run dev
