@@ -1,12 +1,14 @@
 import Image from "next/image";
+import "./globals.css"
 
+// this is the container for the page
 export default function Home() {
   return (
-    <div className="page">
+    <div className="flex home-page">
       <main>
-        <h1>This is a page!</h1>
+        <h1>Auxily</h1>
         <p>with a paragraph</p>
       </main>
     </div>
   );
-}
+}  
