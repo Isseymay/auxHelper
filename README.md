@@ -8,23 +8,15 @@ Dependencies:
 
 ## Getting Started
 
-<<<<<<< Updated upstream
-How to get the dependencies required:
-- Clone the repo
-- Navigate to the root folder in bash
-- run ```bash npm install``` or whatever based off your package manager.
 
-How to run:
-=======
 Installs
 - Clone repo
 - Make sure you have node.js and npm
 - In bash or cmd navigate to the root folder 
 - run ```npm install``` to install all dependencies
 
-First, run the development server:
->>>>>>> Stashed changes
 
+How to run:
 ```bash
 npm run dev
 # or
