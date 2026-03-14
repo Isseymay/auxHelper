@@ -32,7 +32,7 @@ body {
   display: flex;
   list-style: none;
   margin-right: 5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   gap: 4rem;
 }
 
@@ -46,7 +46,31 @@ body {
   padding: 5rem 2rem;
 }
 
-.left-hero h1 {
+.left-hero {
   width: 50%;
+  height: 50vh;
   font-size: 5rem;
+}
+
+.btn-container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  border: solid 1px white;
+}
+
+.action-btn{
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: D03BBD;
+  border-radius: 30px;
+  border-color: #D03BBD;
+}
+
+.action-btn:hover {
+  background-color: #D03BBD;
+  color: white;
+  transition: all 0.3s ease;
 }

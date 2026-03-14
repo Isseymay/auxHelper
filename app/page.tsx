@@ -1,15 +1,24 @@
+"use client";
+import { useEffect } from "react";
 import Navbar from "./Components/navbar";
 
-function hoverEffect() {
-  const leftHeading = document.getElementById("left-h1");
-
-  leftHeading?.addEventListener("mouseover", () => {
-    leftHeading.style.animation = "ease-in-out 0.5s linear";
-    leftHeading.style.color = "#D03BBD";
-  });
-}
-
 export default function Home() {
+  useEffect(() => {
+    const leftHeading = document.getElementById("left-h1");
+    
+    if (!leftHeading) return;
+
+    leftHeading.style.transition = "color 0.3s ease";
+
+    leftHeading.addEventListener("mouseover", () => {
+      leftHeading.style.color = "#D03BBD";
+    });
+
+    leftHeading?.addEventListener("mouseout", () => {
+      leftHeading.style.color = "";
+    });
+  }, []);
+
   return (
     <div className="page">
       <main>
@@ -20,8 +29,12 @@ export default function Home() {
           </div>
         </div>
         <div className="btn-container">
-          <a href="/start">Start a party</a>
-          <a href="/join">Join a party</a>
+          <button className='action-btn'>
+            <a href="/start">Start a party</a>
+          </button>
+          <button className='action-btn'>
+            <a href="/join">Join a party</a>
+          </button>
         </div>
       </main>
     </div>
