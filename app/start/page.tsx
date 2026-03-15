@@ -1,24 +1,19 @@
-'use client'
 
-import { useState } from "react";
 import SongEntry from "@/app/Components/song_entry";
 
 import { getAllTracks } from "@/backend/search";
 import { reformatIndividual } from "../Components/individual_search_element";
 
-export async  function Home() {
-    
-    const [songList, setSongList] = useState([] as number[])
+export default async function Home() {
 
-    function handleClick(){
-        setSongList((prev) => [...prev, Date.now()]);
-    }
 
-    const data = await getAllTracks("replay")
+
+    const data = await getAllTracks("love me")
     try{
         var songs = []
         for (var song of data){
             songs.push(reformatIndividual(song));
+            console.log(reformatIndividual(song));
         }
         return (
             <div className="page">
@@ -34,20 +29,16 @@ export async  function Home() {
                 <div className="start-content w-screen h-screen justify-stretch">
                     <div className="queue-container flex w-full justify-center items-top">
                         <div className="queue-content flex flex-col w-3/5">
-                            {songs.map((song) => (SongEntry(song)))}
+                            {songs.map((song) => (<SongEntry key={song.id} song={song} source="search" />))}
                         </div>
                     </div>
-
-                    <button className="rounded-full w-10 h-10 fixed bottom-15 right-10 bg-white text-black hover:bg-gray-400 transition-colors" onClick={handleClick}>
-                    +
-                    </button>
                 </div>
             </main>
             </div>
         );
     } catch (error){
     
-
+        console.error("Error fetching tracks:", error);
         return (
             <div className="page">
             <main className="start-main">
@@ -65,10 +56,6 @@ export async  function Home() {
                             badRequest
                         </div>
                     </div>
-
-                    <button className="rounded-full w-10 h-10 fixed bottom-15 right-10 bg-white text-black hover:bg-gray-400 transition-colors" onClick={handleClick}>
-                    +
-                    </button>
                 </div>
             </main>
             </div>
