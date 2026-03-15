@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+
   useEffect(() => {
     const leftHeading = document.getElementById("left-h1");
     
@@ -27,10 +30,10 @@ export default function Home() {
           <div className="left-hero">
             <h1 id="left-h1">Request it. Queue it. Vote it. Hear it!</h1>
             <div className="btn-container">
-              <button className='action-btn'>
+              <button className='action-btn' id='start-btn'>
                 <a href="/start">Start a party</a>
               </button>
-              <button className='action-btn'>
+              <button className='action-btn' id='join-btn'>
                 <a href="/join">Join a party</a>
               </button>
             </div>

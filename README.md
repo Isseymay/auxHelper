@@ -8,7 +8,6 @@ Dependencies:
 
 ## Getting Started
 
-
 Installs
 - Clone repo
 - Make sure you have node.js and npm
@@ -28,5 +27,3 @@ bun dev
 ```
 
 you can then view the project at http:/localhost:3000
-
-How to setup on your device.
