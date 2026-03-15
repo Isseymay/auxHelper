@@ -17,7 +17,7 @@ export interface Party {
 
 export interface Queue {
   _id?: ObjectId;
-  partyId: ObjectId;
+  // partyId: ObjectId;
   songs: ObjectId[];
 }
 
@@ -27,7 +27,7 @@ export interface Song {
   name: string;
   artist: string;
   image: string;
-  spotifyId?: string;
+  spotifyId?: number;
   upvotes: number;
   downvotes: number;
 }
