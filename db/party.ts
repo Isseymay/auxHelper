@@ -1,16 +1,8 @@
 import { prototype } from "events";
 import { connectDB } from "./db";
 import { Party } from "./models";
-import { createQueue } from "./queue";
 import { ObjectId } from "mongodb";
-
-// export interface Party {
-//   _id?: ObjectId;
-//   partyCode: string;
-//   name: string;
-//   hostId: ObjectId;
-//   queueId: ObjectId; // required
-// }
+import { createQueue } from "./queue";
 
 export async function createParty(party: Party) {
   const db = await connectDB();
@@ -40,4 +32,18 @@ function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); 
+}
+
+export async function joinParty(code: string){
+  // return queueId & party name if code in db
+  const db = await connectDB();
+  const result = await db.collection<Party>("parties").findOne(
+    {partyCode:code}, //query
+    {projection: {queueId:1, name:1}} // projection?
+  );
+  if (result){
+    return result.queueId;
+  } else{
+    return null;
+  }
 }

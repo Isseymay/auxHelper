@@ -27,7 +27,7 @@ export interface Song {
   name: string;
   artist: string;
   image: string;
-  spotifyId?: string;
+  spotifyId?: number;
   upvotes: number;
   downvotes: number;
 }
