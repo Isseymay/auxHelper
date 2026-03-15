@@ -40,5 +40,9 @@ export async function joinParty(code: string){
     {partyCode:code}, //query
     {projection: {queueId:1, name:1}} // projection?
   );
-  return result;
+  if (result){
+    return result.queueId;
+  } else{
+    return null;
+  }
 }
