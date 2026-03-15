@@ -1,4 +1,6 @@
+'use server';
 import { MongoClient } from "mongodb";
+
 
 const url = "";
 
