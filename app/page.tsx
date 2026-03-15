@@ -26,6 +26,9 @@ export default function Home() {
 
   return (
     <div className="page">
+      <button onClick={() => window.location.href = '/api/auth/login'}>
+        Login with Spotify
+      </button>
       <main>
         <div className="hero">
           <div className="left-hero">
