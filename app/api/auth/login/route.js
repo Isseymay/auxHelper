@@ -9,7 +9,7 @@ export async function GET(request) {
     const scope = 'user-read-private user-read-email';
 
     const client_id = process.env.SPOTIFY_CLIENT_ID;
-    const redirect_uri = process.env.SPOTIFY_REDIRECT_URI;
+    const redirect_uri = 'https://amparo-omnificent-pedro.ngrok-free.dev/api/auth/callback';
 
 
     const spotifyurlparams = new URLSearchParams({
