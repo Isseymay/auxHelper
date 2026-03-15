@@ -23,7 +23,7 @@ export interface Queue {
 
 export interface Song {
   _id?: ObjectId;
-  queueId: ObjectId;
+  // queueId: ObjectId;
   name: string;
   artist: string;
   image: string;

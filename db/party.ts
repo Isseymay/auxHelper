@@ -1,3 +1,4 @@
+import { prototype } from "events";
 import { connectDB } from "./db";
 import { Party } from "./models";
 import { ObjectId } from "mongodb";

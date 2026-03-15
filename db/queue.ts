@@ -13,7 +13,7 @@ export async function createQueue(queue: Queue|null) {
     queue=newQ
   }
   const db = await connectDB();
-  const result = await db.collection<Queue>("queues").insertOne(queue);
+  const result = await db.collection<Queue>("queues").insertOne(empty);
   return result.insertedId;
 }
 
