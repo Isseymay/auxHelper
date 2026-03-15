@@ -1,4 +1,4 @@
-import JoinForm from "../components/join_form";
+import JoinForm from "../Components/join_form";
 
 export default function Home() {
   return (

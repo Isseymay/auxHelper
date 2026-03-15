@@ -28,6 +28,20 @@ export default async function clientCreateParty(hostId:ObjectId, name:string){
   return createParty(newParty);
 }
 
+export async function getPartyCode(id:ObjectId){
+  const db = await connectDB();
+  const result = await db.collection<Party>("parties").findOne(
+    {_id:id}, //query
+    {projection: {partyCode:1, _id:0}} // projection?
+  );
+  if(result && typeof(result.partyCode)==="string"){
+    return result.partyCode
+  }
+  else{
+    throw new Error("Error translating to code: "+id)
+  }
+}
+
 function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -35,15 +49,28 @@ function getRandomInt(min: number, max: number) {
 }
 
 export async function joinParty(code: string){
-  // return queueId & party name if code in db
+  // return party_id
   const db = await connectDB();
   const result = await db.collection<Party>("parties").findOne(
     {partyCode:code}, //query
-    {projection: {queueId:1, name:1}} // projection?
+    {projection: {}} // projection?
+  );
+  if (result){
+    return result._id;
+  } else{
+    return null;
+  }
+}
+
+export async function getQueueFromParty(party:ObjectId){
+  const db = await connectDB()
+  const result = await db.collection<Party>("parties").findOne(
+    {_id:party},
+    {projection: {queueId:1, _id:0}}
   );
   if (result){
     return result.queueId;
   } else{
-    return null;
+    throw new Error("No queue attatched to party of id: "+party);
   }
 }

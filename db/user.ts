@@ -6,3 +6,4 @@ export async function createUser(user: User){
     const result = await db.collection<User>("users").insertOne(user);
     return result.insertedId;
 }
+
