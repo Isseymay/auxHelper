@@ -5,6 +5,8 @@ export interface SongCard{
     name: string,
     artist: string;
     id: number;
+    search: boolean; // if true then include add and not upvote/downvote
+    host: boolean; // if true invlude veto
 }
 
 export function individual(search: SongCard){
@@ -20,7 +22,7 @@ export function individual(search: SongCard){
 
 }
 
-
+// for search
 export function reformatIndividual(songData: any){
     var artists = "by ";
     const name = songData.name;
